@@ -23,14 +23,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                inpt=  input "Approve/deny Testing to production system"
+                echo 'Testing status $inpt'
             }
         }
         stage('Deploy') {
            
             steps {
                //  timeout(time: 20, unit: 'SECONDS') {
-                 input "Approve/deny deployment to production system"
+               
              //}
                 echo 'Deploying....'
             }
