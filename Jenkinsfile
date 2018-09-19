@@ -3,23 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-        parallel (
-            "First Build" : {
-                echo 'first-build-job'
-            },
-            "Second Build" : {
-                echo 'second-build-job'
-            }
-        )
-        build("test-job")
-        parallel (
-            "Third Build" : {
-                echo 'third -build-job'
-            },
-            "Last Build" : {
-                 echo 'last-build-job'
-            }
-        )
+         echo 'Building'
         }
         stage('Test') {
             steps {
