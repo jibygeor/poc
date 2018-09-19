@@ -13,10 +13,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-            timeout(time: 1, unit: 'WEEK') {
+           
+            steps {
+                 timeout(time: 1, unit: 'WEEK') {
                  input "Approve/deny deployment to production system"
              }
-            steps {
                 echo 'Deploying....'
             }
         }
