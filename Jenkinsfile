@@ -13,10 +13,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-            input{
-                     message "Please confirm to continue"
-             
-                }
+            timeout(time: 1, unit: 'WEEK') {
+                 input "Approve/deny deployment to production system"
+             }
             steps {
                 echo 'Deploying....'
             }
