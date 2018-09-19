@@ -22,7 +22,7 @@ pipeline {
             }
         }
     }
-     post {
+    /* post {
         always {
             echo 'Done'
         }
@@ -32,5 +32,5 @@ pipeline {
          success {
             echo ':)' 
         }
-    }
+    } */
 }
