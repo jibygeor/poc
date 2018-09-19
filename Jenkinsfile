@@ -8,14 +8,11 @@ pipeline {
            }
         }
         stage('Test') {
-            steps {
-                def doesJavaRock = input(message: 'Do you like to Test?', ok: 'Yes', 
-                        parameters: [booleanParam(defaultValue: true, 
-                        description: 'If you like to Test, just push the button',name: 'Yes?')])
-
-                echo "Test rocks?:" + doesJavaRock
-                
-            }
+           def userInput = input(
+ id: 'userInput', message: 'Let\'s promote?', parameters: [
+ [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
+])
+echo ("Env: "+userInput)
         }
         stage('Deploy') {
            
