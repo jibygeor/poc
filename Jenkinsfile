@@ -18,4 +18,15 @@ pipeline {
             }
         }
     }
+     post {
+        always {
+            echo 'Done'
+        }
+        failure {
+            echo ':('
+        }
+         success {
+            echo ':)'
+        }
+    }
 }
