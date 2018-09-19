@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
            
             steps {
-                 ttimeout(time: 20, unit: 'SECONDS') { {
+                 ttimeout(time: 20, unit: 'SECONDS') {
                  input "Approve/deny deployment to production system"
              }
                 echo 'Deploying....'
