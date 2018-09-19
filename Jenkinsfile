@@ -30,7 +30,7 @@ pipeline {
             echo ':('
         }
          success {
-            echo ':)'
+            echo ':)' 
         }
     }
 }
