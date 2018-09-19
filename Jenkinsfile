@@ -9,8 +9,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                inpt=  input "Approve/deny Testing to production system"
-                echo 'Testing status $inpt'
+                def doesJavaRock = input(message: 'Do you like to Test?', ok: 'Yes', 
+                        parameters: [booleanParam(defaultValue: true, 
+                        description: 'If you like to Test, just push the button',name: 'Yes?')])
+
+                echo "Test rocks?:" + doesJavaRock
+                
             }
         }
         stage('Deploy') {
