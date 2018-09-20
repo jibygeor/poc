@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
            
-            steps {
+          //  steps {
                parallel {
                 stage('On Windows') {
                   
@@ -42,7 +42,7 @@ pipeline {
             }
                
             }
-        }
+       // }
     }
     /* post {
         always {
