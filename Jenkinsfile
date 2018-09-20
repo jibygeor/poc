@@ -16,10 +16,31 @@ pipeline {
         stage('Deploy') {
            
             steps {
-               //  timeout(time: 20, unit: 'SECONDS') {
+               parallel {
+                stage('On Windows') {
+                  
+                    steps {
+                        echo 'Deploying....'
+                    }
+                    post {
+                        always {
+                             echo 'Done....'
+                        }
+                    }
+                }
+                stage('On Linux') {
+                   
+                    steps {
+                        echo 'Deploying....'
+                    }
+                    post {
+                        always {
+                            echo 'Done....'
+                        }
+                    }
+                }
+            }
                
-             //}
-                echo 'Deploying....'
             }
         }
     }
